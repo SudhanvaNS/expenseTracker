@@ -20,6 +20,16 @@ body {
   color: #e80000;
 }
 
+.trans-type {
+  opacity: 0.8;
+  font-style: italic;
+  margin-right: 2rem;
+}
+
+.trans-name {
+  margin-right: auto;
+}
+
   #transactions {
     width: 80%;
     margin: 20px auto 0;
