@@ -17,66 +17,65 @@ body {
   }
   
   #transactions {
+    width: 80%;
+    margin: 20px auto 0;
     padding: 20px;
     background-color:aliceblue;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    margin-top: 20px;    
   }
   
   #transaction-list {
     list-style: none;
-    padding: 0;
+    padding: 0 3rem 2rem;
+    width: 80%;
+    margin: 0 auto;
   }
   h2{
     text-align: center;
   }
   #transaction-list li {
     display: flex;
+    width: 60%;
+    margin: auto;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px gray solid;
+    padding: 20px 0 10px;
   }
   
+
+  #transaction-form {
+    display: flex;
+    flex-direction: column;
+  }
+
   #transaction-form input,
   #transaction-form select,
   #transaction-form button {
     padding: 10px;
-    display: block;
-    align-items: center;
-    text-align: center;
-    margin: 1% 0% 1% 30%;
-    max-height: 40px;
-    max-width: 40%;
+    margin: 0.5rem 10rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   }
-  
-  #transaction-form input[type="text"],
-  #transaction-form input[type="number"] {
-    width: 100%;
-    padding: 5px;
-    align-self: center;
-  }
-  
-  #transaction-form select {
-    width: 100%;
-    padding: 5px;
-  }
-  li{
-    border-left: #45a049;
-    border-width: 0px 2px 0px 0px;
-    border:solid;
-   
-  }
+
   #transaction-form button {
     display: block;
-    width: 100%;
-    padding: 10px;
+    padding: 10px 5px;
+    width:12%;
+    margin: 1rem auto;
     background-color: #4CAF50;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
   }
   
   #transaction-form button:hover {
