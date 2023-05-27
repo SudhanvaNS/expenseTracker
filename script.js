@@ -23,6 +23,7 @@ function displayTrasactions(trans){
   const transactionListEl = document.getElementById("transaction-list");
   const transactionItemEl = document.createElement("li");
   const amountEl = document.createElement("span");
+  amountEl.className = "trans-amt";
   const descEl = document.createElement("span");
   descEl.className = "trans-name";
   const typeEl = document.createElement("span");
