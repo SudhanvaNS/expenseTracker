@@ -45,7 +45,12 @@ function displayTrasactions(arr){
   }
 
   const balanceEl = document.getElementById("balance");
-  balanceEl.innerText = "Balance: ₹"+balance.toFixed(2);
+  balanceEl.innerText = "Balance: ₹" + balance.toFixed(2);
+  if (balance < 0)
+    balanceEl.classList.add("negative-balance");
+  else
+    balanceEl.classList.remove("negative-balance");
+
 }
 //funciotn to update the transaction list and balance display on the webpage
 

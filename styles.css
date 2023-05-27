@@ -16,6 +16,10 @@ body {
     margin-bottom: 20px;
   }
   
+.negative-balance{
+  color: #e80000;
+}
+
   #transactions {
     width: 80%;
     margin: 20px auto 0;
