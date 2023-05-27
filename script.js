@@ -1,5 +1,5 @@
 //variable to keep track of all transaction
-var transaction=[];
+let transaction=[];
 const formEl=document.getElementById("transaction-form");
 const amountEl=document.getElementById("amount");
 const descriptionEl=document.getElementById("description");
@@ -8,41 +8,40 @@ var balance=0.00;
 
 // event Handling of submit button
 
-formEl.addEventListener("submit" ,function(event){
+formEl.addEventListener("submit", function(event){
   event.preventDefault();
-  const desc=descriptionEl.value;
-  const amount=amountEl.value;
-  const type=typeEl.value;
-  const trans=new Transaction(desc,amount,type);
+  const desc = descriptionEl.value;
+  const amount = amountEl.value;
+  const type = typeEl.value;
+  const trans = { desc, amount, type };
   // append an object to an array
   transaction.push(trans);
-  displayTrasactions(transaction[transaction.length-1]);
+  displayTrasactions(trans);
 });
-//object constructor
-function Transaction(desc,amount,type){
-    this.desc=desc;
-    this.amount=amount;
-    this.type=type;
-}
-function displayTrasactions(arr){
+
+function displayTrasactions(trans){
   const transactionListEl = document.getElementById("transaction-list");
   const transactionItemEl = document.createElement("li");
   const amountEl = document.createElement("span");
   const descEl = document.createElement("span");
-  const typeEl=document.createElement("span");
-  amountEl.innerText = "₹ " + arr.amount;
-  descEl.innerText = arr.desc;
-  typeEl=
+  descEl.className = "trans-name";
+  const typeEl = document.createElement("span");
+  typeEl.className = "trans-type";
+  amountEl.innerText = "₹ " + trans.amount;
+  descEl.innerText = trans.desc;
+  typeEl.innerText = trans.type;
   transactionItemEl.appendChild(descEl);
+  transactionItemEl.appendChild(typeEl);
   transactionItemEl.appendChild(amountEl);
+  
   
   // transactionItemEl.appendChild(typeEl);
 
   transactionListEl.appendChild(transactionItemEl);
-  if (arr.type === "income") {
-    balance += parseFloat(arr.amount);
-  } else if (arr.type === "expense") {
-    balance -= parseFloat(arr.amount);
+  if (trans.type === "Income") {
+    balance += parseFloat(trans.amount);
+  } else if (trans.type === "Expense") {
+    balance -= parseFloat(trans.amount);
   }
 
   const balanceEl = document.getElementById("balance");
