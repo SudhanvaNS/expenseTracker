@@ -30,7 +30,7 @@ function displayTrasactions(arr){
   const amountEl = document.createElement("span");
   const descEl = document.createElement("span");
   const typeEl=document.createElement("span");
-  amountEl.innerText = arr.amount;
+  amountEl.innerText = "₹ " + arr.amount;
   descEl.innerText = arr.desc;
   transactionItemEl.appendChild(descEl);
   transactionItemEl.appendChild(amountEl);
