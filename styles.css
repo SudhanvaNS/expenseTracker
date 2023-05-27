@@ -23,7 +23,10 @@ body {
 .trans-type {
   opacity: 0.8;
   font-style: italic;
-  margin-right: 2rem;
+}
+
+.trans-amt {
+    margin-left: 2rem;
 }
 
 .trans-name {
@@ -63,6 +66,7 @@ body {
   
 
   #transaction-form {
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
   }
