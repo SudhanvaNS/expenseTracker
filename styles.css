@@ -1,5 +1,5 @@
 body {
-    background-color: #112D4E;
+    background-color:rgb(255, 255, 255);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -18,8 +18,8 @@ body {
   
   #transactions {
     padding: 20px;
-    background-color:#F07B3F;
-    box-shadow: 40px;
+    background-color:aliceblue;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     margin-top: 20px;    
   }
@@ -28,7 +28,9 @@ body {
     list-style: none;
     padding: 0;
   }
-  
+  h2{
+    text-align: center;
+  }
   #transaction-list li {
     display: flex;
     justify-content: space-between;
@@ -40,20 +42,33 @@ body {
   #transaction-form input,
   #transaction-form select,
   #transaction-form button {
-    margin-top: 10px;
+    padding: 10px;
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin: 1% 0% 1% 30%;
+    max-height: 40px;
+    max-width: 40%;
+
   }
   
   #transaction-form input[type="text"],
   #transaction-form input[type="number"] {
     width: 100%;
     padding: 5px;
+    align-self: center;
   }
   
   #transaction-form select {
     width: 100%;
     padding: 5px;
   }
-  
+  li{
+    border-left: #45a049;
+    border-width: 0px 2px 0px 0px;
+    border:solid;
+   
+  }
   #transaction-form button {
     display: block;
     width: 100%;
