@@ -13,13 +13,13 @@ formEl.addEventListener("submit" ,function(event){
   const desc=descriptionEl.value;
   const amount=amountEl.value;
   const type=typeEl.value;
-  const obj=new Object(desc,amount,type);
+  const trans=new Transaction(desc,amount,type);
   // append an object to an array
-  transaction.push(obj);
+  transaction.push(trans);
   displayTrasactions(transaction[transaction.length-1]);
 });
 //object constructor
-function Object(desc,amount,type){
+function Transaction(desc,amount,type){
     this.desc=desc;
     this.amount=amount;
     this.type=type;
@@ -32,6 +32,7 @@ function displayTrasactions(arr){
   const typeEl=document.createElement("span");
   amountEl.innerText = "₹ " + arr.amount;
   descEl.innerText = arr.desc;
+  typeEl=
   transactionItemEl.appendChild(descEl);
   transactionItemEl.appendChild(amountEl);
   
