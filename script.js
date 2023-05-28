@@ -64,7 +64,7 @@ function displayTrasaction(trans) {
 }
 
 
-
+//function to delete a particular transaction
 function deleteTransaction() {
   
 }
@@ -87,7 +87,7 @@ function updateBalance(trans) {
 }
 //function to update the transaction list and balance display on the webpage
 
-//function to delete a particular transaction
+
 
  
 //   deleteEl.addEventListener("click" ,deleteTransaction)
