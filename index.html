@@ -3,6 +3,8 @@
 
 <head>
   <title>Personal Finance Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/689f04e9e5.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -12,16 +14,18 @@
   <div id="transactions">
     <h2>Transaction Summary</h2>
     <ul id="transaction-list">
-      <!-- <li class="red1 green1">
+      <li class="trans-item">
         <span class="trans-name">Buy milk and groceries</span>
         <span class="trans-amt">₹125</span>
-        <button class = "btn" >-</button>
+        <button type="button" class="edit-trans"><i class="fa-sharp fa-solid fa-pen" style="color: #323232;"></i></button>
+        <button type="button" class="delete-trans"><i class="fa-solid fa-trash" style="color: #323232;"></i></button>
       </li>
-      <li>
+      <li class="trans-item">
         <span class="trans-name">Receive comission payment</span>
         <span class="trans-amt">₹250</span>
-        <button class = "btn">-</button>
-      </li> -->
+        <button type="button" class="edit-trans"><i class="fa-sharp fa-solid fa-pen" style="color: #323232;"></i></button>
+        <button type="button" class="delete-trans"><i class="fa-solid fa-trash" style="color: #323232;"></i></button>
+      </li>
     </ul>
     <form id="transaction-form">
       <input type="text" id="description" name="description" placeholder="Description" required>
