@@ -36,8 +36,6 @@ function displayTrasaction(trans) {
   amountEl.className = "trans-amt";
   const descEl = document.createElement("span");
   descEl.className = "trans-name";
-  const btnEl = document.createElement("button");
-  btnEl.className = "btn";
   amountEl.innerText =
     (trans.type === "Income" ? "+ " : "- ") + trans.amount;
   descEl.innerText = trans.desc;
