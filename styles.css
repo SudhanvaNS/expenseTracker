@@ -27,6 +27,7 @@ h1 {
 
 .trans-amt {
   margin-left: 2rem;
+  margin-right: 1rem;
 }
 
 .trans-name {
@@ -86,7 +87,7 @@ h2 {
 
 #transaction-list li {
   display: flex;
-  width: 60%;
+  width: 75%;
   margin: auto;
   justify-content: space-between;
   align-items: center;
@@ -97,6 +98,13 @@ h2 {
   padding: 20px 0 10px;
 }
 
+.edit-trans, .delete-trans {
+  border: none;
+  background: none;
+  padding: 0 7px;
+  opacity: 0.8;
+  cursor: pointer;
+}
 
 #transaction-list {
   list-style: none;
