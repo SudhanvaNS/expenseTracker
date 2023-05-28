@@ -10,23 +10,24 @@
 
 <body>
   <h1>Personal Finance Tracker</h1>
-  <div id="balance">Balance: ₹0.00</div>
+  <div id="balance">Balance: ₹<span class="amount">0.00</span></div>
   <div id="transactions">
-    <h2>Transaction Summary</h2>
+    <h3>Transaction History</h3>
     <ul id="transaction-list">
-      <li class="trans-item">
+      <li class="trans-item expense">
         <span class="trans-name">Buy milk and groceries</span>
-        <span class="trans-amt">₹125</span>
+        <span class="trans-amt">- 125</span>
         <button type="button" class="edit-trans"><i class="fa-sharp fa-solid fa-pen" style="color: #323232;"></i></button>
         <button type="button" class="delete-trans"><i class="fa-solid fa-trash" style="color: #323232;"></i></button>
       </li>
-      <li class="trans-item">
+      <li class="trans-item income">
         <span class="trans-name">Receive comission payment</span>
-        <span class="trans-amt">₹250</span>
+        <span class="trans-amt">+ 250</span>
         <button type="button" class="edit-trans"><i class="fa-sharp fa-solid fa-pen" style="color: #323232;"></i></button>
         <button type="button" class="delete-trans"><i class="fa-solid fa-trash" style="color: #323232;"></i></button>
       </li>
     </ul>
+    <h3 class="underline">Add New Transaction</h3>
     <form id="transaction-form">
       <input type="text" id="description" name="description" placeholder="Description" required>
       <input type="number" id="amount" name="amount" step="0.01" placeholder="Amount" required>
