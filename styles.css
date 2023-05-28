@@ -58,8 +58,8 @@ body {
     justify-content: space-between;
     align-items: center;
     border-top: none;
-    border-right: none;
     border-left: none;
+
     border-bottom: 1px gray solid;
     padding: 20px 0 10px;
   }
@@ -79,7 +79,7 @@ body {
     border: none;
     border-radius: 5px;
     outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   }
 
@@ -98,5 +98,13 @@ body {
   
   #transaction-form button:hover {
     background-color: #45a049;
+  }
+  .btn{
+    max-width: 1000px;
+    max-height: 7px;
+    margin-left: 20px;
+    background-color: #E84545;
+    color: aliceblue;
+    border-radius: 5px;
   }
   

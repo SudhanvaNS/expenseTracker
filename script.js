@@ -1,6 +1,10 @@
 //variable to keep track of all transaction
 let transaction=[];
+const deleteEl=document.querySelectorAll('.btn');
+console.log(deleteEl[1]);
+
 const formEl=document.getElementById("transaction-form");
+
 const amountEl=document.getElementById("amount");
 const descriptionEl=document.getElementById("description");
 const typeEl=document.getElementById("type");
@@ -16,9 +20,10 @@ formEl.addEventListener("submit", function(event){
   const trans = { desc, amount, type };
   // append an object to an array
   transaction.push(trans);
+  console.log(transaction);
   displayTrasactions(trans);
 });
-
+//funciotn to update the transaction list and balance display on the webpage
 function displayTrasactions(trans){
   const transactionListEl = document.getElementById("transaction-list");
   const transactionItemEl = document.createElement("li");
@@ -26,14 +31,14 @@ function displayTrasactions(trans){
   amountEl.className = "trans-amt";
   const descEl = document.createElement("span");
   descEl.className = "trans-name";
-  const typeEl = document.createElement("span");
-  typeEl.className = "trans-type";
+  const btnEl = document.createElement("button");
+  btnEl.className = "btn";
   amountEl.innerText = "₹ " + trans.amount;
   descEl.innerText = trans.desc;
-  typeEl.innerText = trans.type;
+  btnEl.innerText = "-";
   transactionItemEl.appendChild(descEl);
-  transactionItemEl.appendChild(typeEl);
   transactionItemEl.appendChild(amountEl);
+  transactionItemEl.appendChild(btnEl);
   
   
   // transactionItemEl.appendChild(typeEl);
@@ -53,5 +58,11 @@ function displayTrasactions(trans){
     balanceEl.classList.remove("negative-balance");
 
 }
-//funciotn to update the transaction list and balance display on the webpage
 
+//function to delete a particular transaction
+
+ 
+//   deleteEl.addEventListener("click" ,deleteTransaction)
+// function deleteTransaction(event){
+
+// }
