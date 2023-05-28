@@ -1,9 +1,7 @@
 //variable to keep track of all transaction
 let transaction=[];
-const deleteEl=document.querySelectorAll('.btn');
-console.log(deleteEl[1]);
 
-const formEl=document.getElementById("transaction-form");
+const formEl = document.getElementById("transaction-form");
 
 let balance=0.00;
 
@@ -26,7 +24,6 @@ formEl.addEventListener("submit", function(event){
 
 const transactionItems = document.querySelectorAll(".trans-item");
 for (item of transactionItems) {
-  console.log(item.lastElementChild);
     item.lastElementChild.addEventListener("click", () => {
     console.log(this);
   })
@@ -34,16 +31,16 @@ for (item of transactionItems) {
 
 function displayTrasaction(trans) {
   const transactionItemEl = document.createElement("li");
-  transactionItemEl.className = "trans-item";
+  transactionItemEl.className = `trans-item ${trans.type === "Income" ? "income" : "expense"}`;
   const amountEl = document.createElement("span");
   amountEl.className = "trans-amt";
   const descEl = document.createElement("span");
   descEl.className = "trans-name";
   const btnEl = document.createElement("button");
   btnEl.className = "btn";
-  amountEl.innerText = "₹ " + trans.amount;
+  amountEl.innerText =
+    (trans.type === "Income" ? "+ " : "- ") + trans.amount;
   descEl.innerText = trans.desc;
-  typeEl.innerText = trans.type;
 
   const editBtn = document.createElement("button");
   editBtn.className = "edit-trans";
@@ -60,7 +57,7 @@ function displayTrasaction(trans) {
   transactionItemEl.appendChild(delBtn);
  
   const transactionListEl = document.getElementById("transaction-list");
-  transactionListEl.appendChild(transactionItemEl);
+  transactionListEl.prepend(transactionItemEl);
 }
 
 
@@ -77,8 +74,8 @@ function updateBalance(trans) {
     balance -= parseFloat(trans.amount);
   }
 
-  const balanceEl = document.getElementById("balance");
-  balanceEl.innerText = "Balance: ₹" + balance.toFixed(2);
+  const balanceEl = document.querySelector(".amount");
+  balanceEl.innerText = balance.toFixed(2);
   if (balance < 0)
     balanceEl.classList.add("negative-balance");
   else
