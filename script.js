@@ -1,9 +1,10 @@
 //variable to keep track of all transaction
-let transaction=[];
+let transactions = [];
 
+const transactionListEl = document.getElementById("transaction-list");
 const formEl = document.getElementById("transaction-form");
 
-let balance=0.00;
+let balance = 0.00;
 
 // event Handling of submit button
 
@@ -17,27 +18,26 @@ formEl.addEventListener("submit", function(event){
   const type = typeEl.value;
   const trans = { desc, amount, type };
   // append an object to an array
-  transaction.push(trans);
+  transactions.push(trans);
   displayTrasaction(trans);
   updateBalance(trans);
 });
 
-const transactionItems = document.querySelectorAll(".trans-item");
-for (item of transactionItems) {
-    item.lastElementChild.addEventListener("click", () => {
-    console.log(this);
-  })
+
+for (const item of transactionListEl.querySelectorAll(".trans-item") ) {
+  item.lastElementChild.addEventListener("click", () => deleteTransaction(item));
 }
 
 function displayTrasaction(trans) {
   const transactionItemEl = document.createElement("li");
   transactionItemEl.className = `trans-item ${trans.type === "Income" ? "income" : "expense"}`;
+  
   const amountEl = document.createElement("span");
   amountEl.className = "trans-amt";
   const descEl = document.createElement("span");
   descEl.className = "trans-name";
   amountEl.innerText =
-    (trans.type === "Income" ? "+ " : "- ") + trans.amount;
+    (trans.type === "Income" ? "+" : "-") + trans.amount;
   descEl.innerText = trans.desc;
 
   const editBtn = document.createElement("button");
@@ -53,22 +53,30 @@ function displayTrasaction(trans) {
   transactionItemEl.appendChild(amountEl);
   transactionItemEl.appendChild(editBtn);
   transactionItemEl.appendChild(delBtn);
+
+  transactionItemEl.lastElementChild.addEventListener("click", () => {
+    deleteTransaction(transactionItemEl)
+  });
  
-  const transactionListEl = document.getElementById("transaction-list");
   transactionListEl.prepend(transactionItemEl);
 }
 
-
 //function to delete a particular transaction
-function deleteTransaction() {
-  
+function deleteTransaction(item) {
+  const name = item.querySelector(".trans-name").innerText;
+  const ans = confirm(`Are you sure you wish to delete: ${name}`);
+  if (ans) {
+    transactionListEl.removeChild(item);
+    balance -= Number(item.querySelector(".trans-amt").innerText);
+    updateBalance();
+  }
 }
 
-function updateBalance(trans) {
+function updateBalance(trans={}) {
   
-  if (trans.type === "Income") {
+  if (trans?.type === "Income") {
     balance += parseFloat(trans.amount);
-  } else if (trans.type === "Expense") {
+  } else if (trans?.type === "Expense") {
     balance -= parseFloat(trans.amount);
   }
 
@@ -80,12 +88,3 @@ function updateBalance(trans) {
     balanceEl.classList.remove("negative-balance");
 
 }
-//function to update the transaction list and balance display on the webpage
-
-
-
- 
-//   deleteEl.addEventListener("click" ,deleteTransaction)
-// function deleteTransaction(event){
-
-// }
