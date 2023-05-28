@@ -1,12 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
 body {
   background-color: rgb(255, 255, 255);
-  font-family: Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   padding: 20px;
 }
 
-h1 {
+h1, h2, h3 {
   text-align: center;
+}
+
+.underline {
+  border-bottom: 1px solid grey;
+  padding-bottom: 5px;
+  width: 20%;
+  margin: auto;
 }
 
 #balance {
@@ -20,51 +29,15 @@ h1 {
   color: #e80000;
 }
 
-.trans-type {
-  opacity: 0.8;
-  font-style: italic;
-}
-
 .trans-amt {
   margin-left: 2rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .trans-name {
   margin-right: auto;
 }
 
-  #transactions {
-    width: 80%;
-    margin: 20px auto 0;
-    padding: 20px;
-    background-color:aliceblue;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-  }
-  
-  #transaction-list {
-    list-style: none;
-    padding: 0 3rem 2rem;
-    width: 80%;
-    margin: 0 auto;
-  }
-  h2{
-    text-align: center;
-  }
-  #transaction-list li {
-    display: flex;
-    width: 60%;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    border-top: none;
-    border-left: none;
-
-    border-bottom: 1px gray solid;
-    padding: 20px 0 10px;
-  }
-  
 #transactions {
   width: 80%;
   margin: 20px auto 30px;
@@ -81,71 +54,37 @@ h1 {
   margin: 0 auto;
 }
 
-h2 {
-  text-align: center;
-}
 
 #transaction-list li {
+  font-size: 1rem;
+  background-color: #ffffff;
   display: flex;
   width: 75%;
   margin: auto;
   justify-content: space-between;
   align-items: center;
   border-top: none;
-  border-right: none;
   border-left: none;
-  border-bottom: 1px rgba(128, 128, 128, 0.6) solid;
-  padding: 20px 0 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+
 }
 
-.edit-trans, .delete-trans {
+#transaction-list li.expense {
+    border-right: 5px #e80000 solid;
+}
+#transaction-list li.income {
+    border-right: 5px #019e23 solid;
+}
+
+.edit-trans,
+.delete-trans {
   border: none;
   background: none;
   padding: 0 7px;
   opacity: 0.8;
   cursor: pointer;
-}
-
-#transaction-list {
-  list-style: none;
-  padding: 0 3rem 2rem;
-  width: 80%;
-  margin: 0 auto;
-}
-
-  #transaction-form input,
-  #transaction-form select,
-  #transaction-form button {
-    padding: 10px;
-    margin: 0.5rem 10rem;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-
-h2 {
-  text-align: center;
-}
-
-#transaction-list li {
-  display: flex;
-  width: 60%;
-  margin: auto;
-  justify-content: space-between;
-  align-items: center;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px rgba(128, 128, 128, 0.6) solid;
-  padding: 20px 0 10px;
-}
-
-
-#transaction-form {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
 }
 
 #transaction-form input,
@@ -157,7 +96,12 @@ h2 {
   border-radius: 5px;
   outline: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
+#transaction-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 #transaction-form button {
