@@ -1,6 +1,5 @@
 //variable to keep track of all transaction
 let transactions = [];
-
 const transactionListEl = document.getElementById("transaction-list");
 const formEl = document.getElementById("transaction-form");
 
@@ -16,7 +15,7 @@ formEl.addEventListener("submit", function(event){
   const desc = descriptionEl.value;
   const amount = amountEl.value;
   const type = typeEl.value;
-  const trans = { desc, amount, type };
+  const trans = { desc, amount, type};
   // append an object to an array
   transactions.push(trans);
   displayTrasaction(trans);
@@ -76,20 +75,22 @@ function editTransaction(item) {
 
   item.appendChild(updateBtn);
 
-  item.querySelector(".trans-name").contentEditable = true;
-  const prevBalance = Number(item.querySelector(".trans-amt").innerText.slice(1));
-  item.querySelector(".trans-amt").contentEditable = true;
+  const itemNameEl = item.querySelector(".trans-name");
+  const itemAmtEl = item.querySelector(".trans-amt");
+  const prevBalance = Number(itemAmtEl.innerText.slice(1));
+  
+  itemNameEl.contentEditable = true;
+  itemAmtEl.contentEditable = true;
 
   updateBtn.addEventListener("click", () => {
-    item.querySelector(".trans-name").contentEditable = false;
-    item.querySelector(".trans-amt").contentEditable = false;
-
+    itemNameEl.contentEditable = false;
+    itemAmtEl.contentEditable = false;
     
-    const updatedBalance = Number(item.querySelector(".trans-amt").innerText.slice(1));
+    const updatedBalance = Number(itemAmtEl.innerText.slice(1));
     const type = item.classList[1];
     const difference = updatedBalance - prevBalance;
 
-    updateBalance({type, amount: difference});
+    updateBalance({ type, amount: difference });
     
     item.removeChild(updateBtn)
   });
