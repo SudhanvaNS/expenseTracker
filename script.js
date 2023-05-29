@@ -23,21 +23,23 @@ formEl.addEventListener("submit", function(event){
   updateBalance(trans);
 });
 
-
-for (const item of transactionListEl.querySelectorAll(".trans-item") ) {
+for (const item of transactionListEl.querySelectorAll(".trans-item")) {
+  item
+    .querySelector(".edit-trans")
+    .addEventListener("click", () => editTransaction(item));
   item.lastElementChild.addEventListener("click", () => deleteTransaction(item));
 }
 
 function displayTrasaction(trans) {
   const transactionItemEl = document.createElement("li");
-  transactionItemEl.className = `trans-item ${trans.type === "Income" ? "income" : "expense"}`;
+  transactionItemEl.className = `trans-item ${trans.type}`;
   
   const amountEl = document.createElement("span");
   amountEl.className = "trans-amt";
   const descEl = document.createElement("span");
   descEl.className = "trans-name";
   amountEl.innerText =
-    (trans.type === "Income" ? "+" : "-") + trans.amount;
+    (trans.type === "income" ? "+" : "-") + trans.amount;
   descEl.innerText = trans.desc;
 
   const editBtn = document.createElement("button");
@@ -54,11 +56,43 @@ function displayTrasaction(trans) {
   transactionItemEl.appendChild(editBtn);
   transactionItemEl.appendChild(delBtn);
 
+
+  transactionItemEl
+    .querySelector(".edit-trans")
+    .addEventListener("click", () => editTransaction(transactionItemEl));
   transactionItemEl.lastElementChild.addEventListener("click", () => {
     deleteTransaction(transactionItemEl)
   });
  
   transactionListEl.prepend(transactionItemEl);
+}
+
+
+//function to edit a particulr transaction
+function editTransaction(item) {
+  const updateBtn = document.createElement("button");
+  updateBtn.id = "update";
+  updateBtn.innerText = "Update";
+
+  item.appendChild(updateBtn);
+
+  item.querySelector(".trans-name").contentEditable = true;
+  const prevBalance = Number(item.querySelector(".trans-amt").innerText.slice(1));
+  item.querySelector(".trans-amt").contentEditable = true;
+
+  updateBtn.addEventListener("click", () => {
+    item.querySelector(".trans-name").contentEditable = false;
+    item.querySelector(".trans-amt").contentEditable = false;
+
+    
+    const updatedBalance = Number(item.querySelector(".trans-amt").innerText.slice(1));
+    const type = item.classList[1];
+    const difference = updatedBalance - prevBalance;
+
+    updateBalance({type, amount: difference});
+    
+    item.removeChild(updateBtn)
+  });
 }
 
 //function to delete a particular transaction
@@ -73,10 +107,9 @@ function deleteTransaction(item) {
 }
 
 function updateBalance(trans={}) {
-  
-  if (trans?.type === "Income") {
+  if (trans?.type === "income") {
     balance += parseFloat(trans.amount);
-  } else if (trans?.type === "Expense") {
+  } else if (trans?.type === "expense") {
     balance -= parseFloat(trans.amount);
   }
 
