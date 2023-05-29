@@ -65,6 +65,7 @@ function displayTrasaction(trans) {
 
 //function to edit a particulr transaction
 function editTransaction(item) {
+ item.querySelector(".edit-trans").disabled = true;
   const updateBtn = document.createElement("button");
   updateBtn.id = "update";
   updateBtn.innerText = "Update";
@@ -87,6 +88,7 @@ function editTransaction(item) {
     const difference = updatedBalance - prevBalance;
 
     updateBalance({ type, amount: difference });
+    item.querySelector(".edit-trans").disabled = false;
     
     item.removeChild(updateBtn)
   });
