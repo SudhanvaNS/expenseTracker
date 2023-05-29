@@ -90,6 +90,10 @@ h3 {
   cursor: pointer;
 }
 
+.edit-trans:disabled{
+  cursor: not-allowed;
+}
+
 #update {
   margin-left: 0.5rem;
   padding: 5px 7px;
