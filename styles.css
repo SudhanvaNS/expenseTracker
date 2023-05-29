@@ -7,7 +7,9 @@ body {
   padding: 20px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
 }
 
@@ -72,10 +74,11 @@ h1, h2, h3 {
 }
 
 #transaction-list li.expense {
-    border-right: 5px #e80000 solid;
+  border-right: 5px #e80000 solid;
 }
+
 #transaction-list li.income {
-    border-right: 5px #019e23 solid;
+  border-right: 5px #019e23 solid;
 }
 
 .edit-trans,
@@ -85,6 +88,17 @@ h1, h2, h3 {
   padding: 0 7px;
   opacity: 0.8;
   cursor: pointer;
+}
+
+#update {
+  margin-left: 0.5rem;
+  padding: 5px 7px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 #transaction-form input,
@@ -117,6 +131,7 @@ h1, h2, h3 {
   transition: background-color 0.2s ease-in-out;
 }
 
-#transaction-form button:hover {
+#transaction-form button:hover,
+#update:hover {
   background-color: #45a049;
 }
