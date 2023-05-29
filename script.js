@@ -1,5 +1,3 @@
-//variable to keep track of all transaction
-let transactions = [];
 const transactionListEl = document.getElementById("transaction-list");
 const formEl = document.getElementById("transaction-form");
 
@@ -16,8 +14,6 @@ formEl.addEventListener("submit", function(event){
   const amount = amountEl.value;
   const type = typeEl.value;
   const trans = { desc, amount, type};
-  // append an object to an array
-  transactions.push(trans);
   displayTrasaction(trans);
   updateBalance(trans);
 });
