@@ -11,6 +11,7 @@ Calculate Balance: The application automatically calculates and displays the cur
 ## Getting Started
 Clone the repository or download the project files.
 Open the index.html file in a web browser.
+Or type "sudhanvans.github.io/expenseTracker/" on web browser
 Use the form to add transactions. Fill in the description, amount, and select the type (income or expense), then click "Add Transaction".
 To edit a transaction, click the edit button associated with the transaction. Update the description or amount, and click "Update" to save the changes.
 To delete a transaction, click the delete button associated with the transaction.
