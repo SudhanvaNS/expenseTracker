@@ -135,7 +135,6 @@ function toggleLight() {
  var trans=document.getElementById("trans-hist");
   var under = document.querySelector(".underline");
   const button = document.querySelector(".theme-toggle");
-  console.log(button.innerHTML);
   if(balanceEl.style.color==="white" ){
     balanceEl.style.color="black";
     h.style.color="black";
