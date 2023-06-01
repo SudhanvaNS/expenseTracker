@@ -149,3 +149,57 @@ h3 {
   top: 620px;
   right: 20px;  
 }
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  #transactions {
+    width: 100%;
+  }
+
+  #transaction-list li {
+    width: 100%;
+  }
+
+  #transaction-form input,
+  #transaction-form select,
+  #transaction-form button {
+    margin: 0.5rem 0;
+  }
+
+  #transaction-form button {
+    width: 100%;
+  }
+
+  .dark-mode {
+    position: static;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    padding: 20px;
+  }
+
+  #transactions {
+    width: 90%;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  body {
+    padding: 20px;
+  }
+
+  #transactions {
+    width: 80%;
+  }
+  
+}
