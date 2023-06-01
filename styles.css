@@ -165,7 +165,7 @@ h3 {
 /* Mobile Styles */
 @media (max-width: 600px) {
   body {
-    padding: 10px;
+    padding: 25px;
   }
 
   #transactions {
