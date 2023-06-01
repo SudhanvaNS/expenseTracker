@@ -124,7 +124,8 @@ var darkBtn=document.getElementById("dark");
 darkBtn.addEventListener("click", () => {
   toggleLight();
 });
-function toggleLight(){
+function toggleLight() {
+  
   var body=document.body;
   var div=document.getElementById("transactions");
   body.classList.toggle("bg-dark");
@@ -132,17 +133,21 @@ function toggleLight(){
   var balanceEl=document.getElementById("balance");
   var h=document.getElementById("heading");
  var trans=document.getElementById("trans-hist");
- var under=document.querySelector(".underline");
+  var under = document.querySelector(".underline");
+  const button = document.querySelector(".theme-toggle");
+  console.log(button.innerHTML);
   if(balanceEl.style.color==="white" ){
     balanceEl.style.color="black";
     h.style.color="black";
     trans.style.color="black";
-    under.style.color="black";
+    under.style.color = "black";
+    button.innerHTML = "Dark Mode";
   }else{
     h.style.color="white";
     balanceEl.style.color="white";
     trans.style.color="white";
-    under.style.color="white";
+    under.style.color = "white";
+    button.innerHTML = "Light Mode";
   }
  
   // document.h1.style.color="white";
