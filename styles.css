@@ -179,6 +179,10 @@ h3 {
     width: 100%;
   }
 
+  #transaction-list {
+    width: 100%;
+    padding: 1rem;
+  }
   #transaction-list li {
     width: 100%;
   }
