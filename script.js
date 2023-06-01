@@ -120,3 +120,24 @@ function updateBalance(trans={}) {
     balanceEl.classList.remove("negative-balance");
 
 }
+var darkBtn=document.getElementById("dark");
+darkBtn.addEventListener("click", () => {
+  toggleLight();
+});
+function toggleLight(){
+  var body=document.body;
+  
+  body.classList.toggle("bg-dark");
+  var balanceEl=document.getElementById("balance");
+  var h=document.getElementById("heading");
+ 
+  if(balanceEl.style.color==="white" ){
+    balanceEl.style.color="black";
+    h.style.color="black";
+  }else{
+    h.style.color="white";
+    balanceEl.style.color="white";
+  }
+ 
+  // document.h1.style.color="white";
+}
